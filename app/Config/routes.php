@@ -25,23 +25,15 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-//	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-///**
+	Router::connect('/', array('controller' => 'topics', 'action' => 'index', 'home'));
+/**
 // * ...and connect the rest of 'Pages' controller's URLs.
 // */
-//	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
+	Router::connect('/posts/add/:id', array('controller' => 'posts', 'action' => 'add'));
 
 
-    Router::connect('/dashboard', array('controller' => 'posts', 'action' => 'index'));
-    Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
-    Router::connect('/logout', array('controller' => 'users', 'action' => 'logout'));
-
-    Router::connect('/', array('controller' => 'users', 'action' => 'login'));
-    Router::connect('/add', array('controller' => 'posts', 'action' => 'add'));
-    Router::connect('/profile/:username', array('controller' => 'users', 'action' => 'profile'));
-    Router::connect('/addComment/:id', array('controller' => 'comments', 'action' => 'addComment'));
-    Router::connect('/addFollow/:id', array('controller' => 'follows', 'action' => 'addFollow'));
-
+  
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on
